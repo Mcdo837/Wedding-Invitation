@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector(".submit-button");
 
     button.addEventListener("click", function() {
-        button.textContent = sending.....;
+        button.textContent = "sending.....";
         const fullName = document.getElementById("fullName").value;
         const phone = document.getElementById("phone").value;
         const guest1 = document.getElementById("guest1").value;
