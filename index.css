@@ -1,105 +1,122 @@
-.logo{
-    font-family: helvetica;
-}
-header{
-    background-color: rgb(170, 170, 170);
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 20px;
-}
-main{
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.schedules{
-    background-color: lightpink;
-    padding: 20px;
-    color: white;
-    width: 320px;
-    font-family: helvetica;
-    text-align: center;
-}
-.hero{
-    text-align: center;
-    font-family: helvetica;
-}
-.sub-hero{
-    text-align: center;
-}
-.hero-button{
-    text-align: center;
-}
-.hero-button a{
-    background-color: rgb(255, 89, 114);
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    border-radius: 6px;
-}
-.image{
-    width: 300px;
-    border-radius: 10px;
-}
-.occasion-container center h2{
-  color: lightcoral;
-  font-family: helvetica;
-  font-size: 35px;
-}
-.occasion-container h3{
-    font-family: verdana;
-}
-.occasion-container center p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.permissions{
-    background-color: lightblue;
-    padding: 10px 20px;
-    border-radius: 20px;
-}
-.permissions p{
-  font-size: 20px;
-}
-.permissions li{
-    color: rgb(247, 111, 111);
-}
-.form-container{
-    background-color: lightpink;
-    position: absolute;
-    right: 0;
-    left: 0;
-    padding: 10px 20px;
-}
-.form-container h2{
-    font-size: 28px;
-    font-family: verdana;
-    color: white;
-}
-.form-container input{
-    padding: 10px 15px;
-    margin-bottom: 3px;
-    border: solid 1px white;
-    border-radius: 5px;
-    width: 300px;
-}
-.form-container button{
-    background-color: white;
-    color: lightpink;
-    border: solid 1px white;
-    border-radius: 20px;
-    margin-top: 10px;
-    font-size: 15px;
-    padding: 10px 30px;
-}
-.form-container button:active{
-    background-color: lightblue;
-    color: white;
-    transition: 0.2s;
-}
+    body {
+      background: url('image1.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+    .logo {
+      font-family: helvetica;
+    }
+    header {
+      background-color: rgb(170, 170, 170);
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 20px;
+    }
+    main {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .schedules {
+      background-color: lightpink;
+      color: white;
+      width: 400px;
+      font-family: helvetica;
+      text-align: center;
+      border-radius: 60px;
+      padding: 10px 20px; /* same as permissions */
+    }
+    .hero {
+      text-align: center;
+      font-family: helvetica;
+    }
+    .sub-hero {
+      text-align: center;
+    }
+    .hero-button {
+      text-align: center;
+    }
+    .hero-button a {
+      background-color: rgb(255, 89, 114);
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(255, 89, 114, 0.8);
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px rgba(255, 89, 114, 0.8);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(255, 89, 114, 1);
+      }
+    }
+    .image {
+      width: 300px;
+      border-radius: 10px;
+    }
+    .occasion-container center h2 {
+      color: lightcoral;
+      font-family: helvetica;
+      font-size: 35px;
+    }
+    .occasion-container h3 {
+      font-family: verdana;
+    }
+    .occasion-container center p {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .permissions {
+      background-color: lightblue;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+    .permissions p {
+      font-size: 20px;
+    }
+    .permissions li {
+      color: rgb(247, 111, 111);
+    }
+    .form-container {
+      background-color: rgba(255, 182, 193, 0.9); /* semi-transparent pink */
+      position: absolute;
+      right: 0;
+      left: 0;
+      padding: 10px 20px;
+    }
+    .form-container h2 {
+      font-size: 28px;
+      font-family: verdana;
+      color: white;
+    }
+    .form-container input {
+      padding: 10px 15px;
+      margin-bottom: 3px;
+      border: solid 1px white;
+      border-radius: 5px;
+      width: 300px;
+    }
+    .form-container button {
+      background-color: white;
+      color: lightpink;
+      border: solid 1px white;
+      border-radius: 20px;
+      margin-top: 10px;
+      font-size: 15px;
+      padding: 10px 30px;
+    }
+    .form-container button:active {
+      background-color: lightblue;
+      color: white;
+      transition: 0.2s;
+    }
