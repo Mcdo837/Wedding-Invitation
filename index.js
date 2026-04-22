@@ -1,7 +1,5 @@
-    const images = [
-      'image1.jpeg','image2.jpeg','image3.jpeg','image4.jpeg','image5.jpeg',
-      'image6.jpeg','image7.jpeg','image8.jpeg','image9.jpeg'
-    ];
+    const images = ['images/image1.jpeg','images/image2.jpeg','images/image3.jpeg','images/image4.jpeg','images/image5.jpeg',
+   'images/image6.jpeg','images/image7.jpeg','images/image8.jpeg','images/image9.jpeg'];
     let count = 0,
     image_holder = document.getElementById("image-holder");
     image_holder.src = images[count];
