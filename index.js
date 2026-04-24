@@ -1,80 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bros wedding</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <h2 class="logo">Wedding Invite</h2>
-        </div>
-        <div class="menu-container"></div>
-    </header>
-    <main>
-        <div class="schedules">
-            7th November 2026 11:00,
-            Showgrounds Banquet Hall
-        </div>
-        <div class="hero-section">
-            <div class="hero-container">
-                <h1 class="hero">Tebogo Thipe <br> &  <br> Lorenzo Motseki</h1>
-            </div>
-            <div class="sub-header-container">
-                <h3 class="sub-hero">A strong story built over 2 years of friendship and 8 years
-                    of dating, now blossoming into marrage.
-                </h3>
-            </div>
-            <div class="hero-button">
-                <a href="#form-section" class="hero-button">Accept Invite</a>
-            </div>
-        </div>
+const images = ['images/image1.jpeg','images/image2.jpeg','images/image3.jpeg','images/image4.jpeg','images/image5.jpeg',
+'images/image6.jpeg','images/image7.jpeg','images/image8.jpeg','images/image9.jpeg'];
+let count = 0,
+image_holder = document.getElementById("image-holder");
+image_holder.src = images[count];
+let total_images = images.length;
 
+setInterval(()=>{
+    image_holder.src = images[count];
+count++;
+if(count >= total_images){
+    count = 1;
+}else if(count < 1){
+    count = total_images;
+}
+},4000);
 
-    </main>
-    <div class="occasion-container">
-        <center>
-        <h2 class="name">Tebogo Thipe <h3>Becoming Mrs. Mosketi</h3></h2>
-        <p class="words">With joy and gratitude, We invite You to
-            witness the union of these two love birds as they begin their forever journey together.
-        </p>
-        <div class="image-container">
-            <img id="image-holder" class="image">
-        </div>
-        </center>
-    </div>
+// Initialize EmailJS
+   (function(){
+      emailjs.init({
+        publicKey: "w4b8SBE-WPxbvodiw",
+      });
+   })();
 
-    <br><br><br><br><br><br><br><br><br><br>
-    <div class="permissions">
-        <center>
-            <p>Kindly note: <br>
-             <ul>
-                <li>No alcohol will be served / allowed</li>
-                <li>No traditional wear</li>
-                <li>No children under 12 years</li>
-                <li>Attendance limited: you and guests(maximum of 3 people)</li>
-                <li>Dress Theme: Emerald Green & Gold(Mandatory)</li>
-             </ul>
-             dress in elegence, celebrate in love, and join us for the an extraordinary day unlike any other.
-            </p>
-        </center>
-    </div>
-  <br><br><br><br><br>
-    <div id="form-section" class="form-container">
-        <h2>Invitation Form</h2>
-        <input type="text" id="fullName" placeholder="Full Name"><br>
-        <input type="text" id="phone" placeholder="Phone Number"><br>
-        <p>Others</p>
-        <input type="text" id="guest1" placeholder="Guest name"><br>
-        <input type="text" id="guest2" placeholder="Guest name"><br>
-        <br>
-        <button class="submit-button">Submit</button>
-    </div>
+document.addEventListener("DOMContentLoaded", function () {
 
-    <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="index.js"></script>
-</body>
-</html>
+    emailjs.init("w4b8SBE-WPxbvodiw");
+
+    const button = document.querySelector(".submit-button");
+
+    button.addEventListener("click", function() {
+        button.textContent = `sending.....`;
+        const fullName = document.getElementById("fullName").value;
+        const phone = document.getElementById("phone").value;
+        const guest1 = document.getElementById("guest1").value;
+        const guest2 = document.getElementById("guest2").value;
+
+        var templateParams = {
+            full_name: fullName,
+            phone_number: phone,
+            guest_one: guest1,
+            guest_two: guest2
+        };
+
+        emailjs.send("service_0w19jzw", "template_gjbst9q", templateParams)
+            .then(() => {
+                alert("Your Invitation form has been sent");
+                button.textContent = "submit";
+                fullName = document.getElementById("fullName").value = "";
+                phone = document.getElementById("phone").value = "";
+                guest1 = document.getElementById("guest1").value = "";
+                guest2 = document.getElementById("guest2").value = "";
+            })
+            .catch(() => {
+                console.log("check your network!");
+                console.log("Onset is the best");
+            });
+
+    });
+});
